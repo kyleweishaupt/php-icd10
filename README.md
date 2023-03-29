@@ -15,13 +15,33 @@ composer require kyleweishaupt/php-icd10
 ```php
 use ICD10Parser\ICD10Parser;
 
-ICD10Parser::parse("file_path.csv");
+// From ordered .txt file
+$filePath = __DIR __ . "/data/icd10cm_order_2023.txt";
+$orderedCodes = ICD10Parser::fromFile($filePath)->toArray();
+
+// Get the first code in the file
+$firstCode = $orderedCodes[0];
+var_dump($firstCode);
+
+// object(ICD10Parser\ICD10CodeOrdered) {
+//   ["order"]=> int(1)
+//   ["code"] =>string(3) "A00"
+//   ["valid"] => bool(false)
+//   ["shortDescription"] => string(7) "Cholera"
+//   ["longDescription"] => string(7) "Cholera"
+// }
+
+// Get code with decimal as string
+$code = $firstCode->codeFormatted(); // A001 -> A00.1
+
+// Or get from string contents (in case file loaded or ephemeral, etc.)
+$orderedCodes = ICD10Parser::fromString($stringContents)->toArray();
+
 ```
 
 ## Contributing
 
 This may or may not be maintained in the future.
-
 If you need this functionality for a production environment, I highly recommend forking the repository.
 
 ## License
