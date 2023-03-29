@@ -1,0 +1,37 @@
+{
+  "name": "kyleweishaupt/php-icd10",
+  "description": "PHP ICD-10 Parser",
+  "type": "library",
+  "version": "0.0.1",
+  "keywords": [
+    "cms",
+    "icd-10",
+    "helper"
+  ],
+  "homepage": "https://github.com/kyleweishaupt/php-icd10",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kyle Weishaupt",
+      "homepage": "https://github.com/kyleweishaupt",
+      "role": "Author"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/kyleweishaupt/php-icd10/issues",
+    "source": "https://github.com/kyleweishaupt/php-icd10"
+  },
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {},
+  "scripts": {},
+  "autoload": {
+    "psr-4": {
+      "ICD10Parser\\": "src"
+    }
+  },
+  "config": {
+    "allow-plugins": {}
+  }
+}
